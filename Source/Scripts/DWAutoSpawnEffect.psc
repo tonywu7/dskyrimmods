@@ -21,7 +21,9 @@
 ; OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 ; SOFTWARE.
 
-Scriptname DWAutoSpawnEffect extends ActiveMagicEffect  
+Scriptname DWAutoSpawnEffect extends ActiveMagicEffect
+
+import DWVectorUtil
 
 Quest Property DWController Auto
 Actor Property PlayerRef Auto
@@ -50,36 +52,14 @@ float FREQ = 1.0
 float pulse = 0.0
 
 
-float[] Function ProjectionWorldSpaceEulerXZ(float x, float y, float z, float angleX, float angleZ, float distance)
-    ; Translate a point `distance` unit away from world space `(x, y, z)` along the Y axis (true north);
-    ; then rotate it around the same point for `angleX` degrees on the X axis and `angleZ` degrees on the Z axis.
-    ;
-    ; Equivalent to the combination of the following Unity operations
-    ; Translate(Vector3.forward * distance)
-    ; RotateAround(Vector3(x, y, z), Vector3.right, angleX)
-    ; RotateAround(Vector3(x, y, z), Vector3.up, angleZ)
-    float[] position = new float[3]
-    position[0] = x + Math.sin(angleZ) * distance
-    position[1] = y + Math.cos(angleZ) * distance
-    position[2] = z + Math.sin(angleX) * distance
-    return position
-EndFunction
-
-
-float[] Function ProjectionWorldSpaceHeading(float x, float y, float z, float angleZ, float distance)
-    return ProjectionWorldSpaceEulerXZ(x, y, z, 0, angleZ, distance) ; No pitch angle (angleX)
-EndFunction
-
-
 float[] Function ProjectionViewportForward(float distance, float headingOffset = 0.0)
     ; Return the world space coordinates `distance` unit away in front of the player.
     ;
     ; Terrains and other bounding boxes are not accounted for.
-    float x = PlayerRef.GetPositionX()
-    float y = PlayerRef.GetPositionY()
-    float z = PlayerRef.GetPositionZ()
     float t = PlayerRef.GetAngleZ()
-    return ProjectionWorldSpaceHeading(x, y, z, t + headingOffset, distance)
+    float[] rotation = new float[3]
+    rotation[2] = PlayerRef.GetAngleZ() + headingOffset
+    return ProjectionWorldSpaceHeading(Transform(PlayerRef), rotation, distance)
 EndFunction
 
 
