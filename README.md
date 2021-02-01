@@ -14,7 +14,7 @@ has used in his Twitch streams:
 
 ## Download & Install
 
-Download it as a .zip file, then install it like you would for any other mods from sites such as NexusMods.
+Download it as a .zip file, then install it like you would for any other mods from sites such as Nexus Mods.
 **(Use of a mod manager, such as [Mod Organizer 2](https://www.nexusmods.com/skyrimspecialedition/mods/6194),**
 **is highly recommended.)**
 
@@ -25,9 +25,9 @@ Download it as a .zip file, then install it like you would for any other mods fr
 After installing the mod, you will find three spell tomes in your inventory:
 
 - _Dovah-Claus:_ Spawn copies of a selected object every second;
-- [_Icarus' Curses_](https://elderscrolls.fandom.com/wiki/Scroll_of_Icarian_Flight): Anyone hitting anyone else causes
-the target to fly away;
-- _Chaos Conjuration_: Anyone hitting anyone else causes the target to change to a random race or creature.
+- [_Icarus' Curses_](https://elderscrolls.fandom.com/wiki/Scroll_of_Icarian_Flight): Anyone hitting anyone else will
+cause the target to fly away;
+- _Chaos Conjuration_: Anyone hitting anyone else will cause the target to change to a random race or creature.
 
 Each will teach you a spell that when used enables the respective effect for 1 hour.
 
@@ -50,8 +50,8 @@ _usable furnitures such as chairs, doors, and alchemy tables._
 targeting your **Illusion** magic, such as dual casting and Fortify Illusion potions, _at the time you cast this spell:_
 
 - For example, with the "Illusion Dual Casting" perk in the skill tree, dual-casting this spell will spawn an object 22
-times per second instead of 10 times, stacking with other modifiers.
-- This is compatible with any other mods that modify the magic system, such as the Ordinator.
+times per second instead of 10 times.
+- This is compatible with other mods that modify the magic system, such as the Ordinator.
 
 ### Icarus' Curses
 
@@ -68,13 +68,13 @@ _Note that this spell works on dead bodies, but not objects, and does not affect
 in proportion to the victim's weight. This is so that large "objects" such as Giants and Dwarven Centurions will have approximately
 the same initial _acceleration_ as smaller ones such as humans.
 
-**Multipliers:** How fast the actor being hit can fly away is additionally affected by the following, stacking with each other:
+**Multipliers:** Additionally, how fast the actor being hit can fly away is affected by the following:
 
 - Perks, potions, clothings, and abilities affecting your **Alteration** magic _at the time you cast this spell._
 - How the actor was hit:
-    - A power attack using a weapon will have 2x the power;
-    - A bashing attack using a shield will have 1.5x the power;
-    - If the attack victim successfully blocked the attack, it will have 0.8x the power.
+    - A power attack using a weapon will multiply the applied force by 2;
+    - A bashing attack using a shield will multiply the applied force by 1.5;
+    - If the attack victim successfully blocked the attack, the force will be multiplied by 0.8.
 
 ### Chaos Conjuration
 
@@ -135,5 +135,3 @@ as the Fire Cloak spell in the game).
     - **The same invisible cloak effect from step 1. is added to the actor as well.**
 3. This process then repeats whenever any actor comes into contace with any "cloaks" as long as they don't already
 have the effect, spreading the effect farther and farther away.
-
-Using the Frenzy spell as an illustration:
