@@ -29,9 +29,6 @@ Quest Property DWController Auto
 Actor Property PlayerRef Auto
 Form Property DWAutoSpawnTarget Auto
 
-; How much to spawn (base count, will scale with Illusion)
-int SPAWN_COUNT = 10
-
 ; How far away to spawn the object, in Skyrim unit
 int SPAWN_DISTANCE = 240
 
@@ -73,16 +70,26 @@ Function SpawnItemLivePosition(Form item, int count)
 EndFunction
 
 
+Function SpawnItemHavokDynamic(Form item, int count)
+    float[] position = ProjectionViewportForward(SPAWN_DISTANCE, HEADING_OFFSET)
+    int i = 0
+    while i < count
+        ObjectReference placed = PlayerRef.PlaceAtMe(item, 1, False, True)
+        placed.SetPosition(position[0], position[1], position[2] + HEIGHT_OFFSET)
+        placed.Enable()
+        placed.SetMotionType(placed.Motion_Dynamic)
+        Utility.Wait(0.1)
+        placed.ApplyHavokImpulse(1, 1, 1, 0)
+        i += 1
+    endwhile
+EndFunction
+
+
 Function Spawn()
     if DWAutoSpawnTarget == None
         return
     endif
-    SpawnItemLivePosition(DWAutoSpawnTarget, GetSpawnCount())
-EndFunction
-
-
-int Function GetSpawnCount()
-    return (SPAWN_COUNT * self.GetMagnitude()) as int
+    SpawnItemLivePosition(DWAutoSpawnTarget, self.GetMagnitude() as int)
 EndFunction
 
 
@@ -103,7 +110,7 @@ bool Function SelectObject()
         return False
     endif
     DWAutoSpawnTarget = target.GetBaseObject()
-    Debug.Notification("Spawning " + DWAutoSpawnTarget.GetName() + " at a rate of " + GetSpawnCount() + " per second")
+    Debug.Notification("Spawning " + DWAutoSpawnTarget.GetName() + " at a rate of " + self.GetMagnitude() as int + " per second")
     return True
 EndFunction
 

@@ -1,6 +1,7 @@
 ; MIT License
 ;
 ; Copyright (c) 2021 @flugzbf
+; Credit of originality: @DougDougFood
 ;
 ; Permission is hereby granted, free of charge, to any person obtaining a copy
 ; of this software and associated documentation files (the "Software"), to deal
@@ -20,50 +21,17 @@
 ; OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 ; SOFTWARE.
 
-Scriptname DWCommonsPropagationDelegate extends ActiveMagicEffect
+Scriptname DWUniversalImpulsePlayer extends DWPropagatedEffectPlayerMixin
 
-Actor Property PlayerRef Auto
-GlobalVariable Property DWPropagatedEffectTerminate Auto
+Spell Property DWUniversalImpulseSpell Auto
 
-Spell Property PropagatorSpell Auto
-Spell[] Property WorkingSpells Auto
+GlobalVariable Property DWUniversalImpulseMultiplier Auto
 
 
 Event OnEffectStart(Actor akTarget, Actor akCaster)
-    if akTarget == PlayerRef && akCaster != PlayerRef
-        return
-    endif
-    if DWPropagatedEffectTerminate.GetValue() == 0.0
-        Apply(akTarget, akCaster)
-    else
-        Cancel(akTarget, akCaster)
+    ResetGlobalSentinel(akTarget)
+    if akTarget == PlayerRef
+        DWUniversalImpulseMultiplier.SetValue(GetMagnitude())
+        DWUniversalImpulseSpell.Cast(akTarget, akCaster)
     endif
 EndEvent
-
-
-Function Cancel(Actor akTarget, Actor akCaster)
-    int len = WorkingSpells.Length
-    int i = 0
-    while i < len
-        Spell s = WorkingSpells[i]
-        akTarget.DispelSpell(s)
-        i += 1
-    endwhile
-    akTarget.DispelSpell(PropagatorSpell)
-    akCaster.DispelSpell(PropagatorSpell)
-EndFunction
-
-
-Function Apply(Actor akTarget, Actor akCaster)
-    int len = WorkingSpells.Length
-    int i = 0
-    while i < len
-        Spell s = WorkingSpells[i]
-        akTarget.DispelSpell(s)
-        Utility.Wait(0.1)
-        s.Cast(akTarget, akTarget)
-        i += 1
-    endwhile
-    akTarget.DispelSpell(PropagatorSpell)
-    PropagatorSpell.Cast(akTarget, akTarget)
-EndFunction

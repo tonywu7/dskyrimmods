@@ -20,50 +20,26 @@
 ; OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 ; SOFTWARE.
 
-Scriptname DWCommonsPropagationDelegate extends ActiveMagicEffect
+Scriptname DWPropagatedEffectCleanUpMixin extends ActiveMagicEffect
 
 Actor Property PlayerRef Auto
 GlobalVariable Property DWPropagatedEffectTerminate Auto
 
-Spell Property PropagatorSpell Auto
-Spell[] Property WorkingSpells Auto
-
 
 Event OnEffectStart(Actor akTarget, Actor akCaster)
-    if akTarget == PlayerRef && akCaster != PlayerRef
-        return
-    endif
-    if DWPropagatedEffectTerminate.GetValue() == 0.0
-        Apply(akTarget, akCaster)
-    else
-        Cancel(akTarget, akCaster)
+    akTarget.RegisterForUpdateGameTime(6)
+EndEvent
+
+
+Event OnEffectFinish(Actor akTarget, Actor akCaster)
+    if akTarget == PlayerRef
+        DWPropagatedEffectTerminate.SetValue(1.0)
     endif
 EndEvent
 
 
-Function Cancel(Actor akTarget, Actor akCaster)
-    int len = WorkingSpells.Length
-    int i = 0
-    while i < len
-        Spell s = WorkingSpells[i]
-        akTarget.DispelSpell(s)
-        i += 1
-    endwhile
-    akTarget.DispelSpell(PropagatorSpell)
-    akCaster.DispelSpell(PropagatorSpell)
-EndFunction
-
-
-Function Apply(Actor akTarget, Actor akCaster)
-    int len = WorkingSpells.Length
-    int i = 0
-    while i < len
-        Spell s = WorkingSpells[i]
-        akTarget.DispelSpell(s)
-        Utility.Wait(0.1)
-        s.Cast(akTarget, akTarget)
-        i += 1
-    endwhile
-    akTarget.DispelSpell(PropagatorSpell)
-    PropagatorSpell.Cast(akTarget, akTarget)
-EndFunction
+Event OnUpdateGameTime()
+    if DWPropagatedEffectTerminate.GetValue() == 1.0
+        Dispel()
+    endif
+EndEvent

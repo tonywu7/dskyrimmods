@@ -1,3 +1,3 @@
-Scriptname DWManager extends Quest  
+Scriptname DWManager extends Quest
 
 GlobalVariable Property DWUniversalImpulseMultiplier Auto
