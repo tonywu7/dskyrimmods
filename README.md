@@ -41,7 +41,7 @@ Each will teach you a spell that when used enables the respective effect for 1 h
 
 > If you can't see the demo, visit this repo's [GitHub Pages](https://tonywu7.github.io/dskyrimmods/) instead.
 
-<video height="300" controls>
+<video controls>
     <source src="demo/cheese.mp4" type="video/mp4">
 </video>
 
@@ -56,11 +56,11 @@ Note that the "object" that you can spawn can be anything that could be interact
 misc. items such as baskets and cups, ingredients, _critters (e.g. insects and flora), animals and creatures, NPCs, and_
 _usable furnitures such as chairs, doors, and alchemy tables._
 
-<video height="300" controls>
+<video controls>
     <source src="demo/cup.mp4" type="video/mp4">
 </video>
 
-<video height="300" controls>
+<video controls>
     <source src="demo/nazeem.mp4" type="video/mp4">
 </video>
 
@@ -75,7 +75,7 @@ times per second instead of 10 times.
 
 > For 3600s, any NPCs/animals/creatures hitting another will push the hit target away with a force proportional to the target's weight.
 
-<video height="300" controls>
+<video controls>
     <source src="demo/airlines.mp4" type="video/mp4">
 </video>
 
@@ -105,7 +105,7 @@ _Note that:_
 
 > For 3600s, any NPCs/animals/creatures hitting another will change the target into a random race/species.
 
-<video height="300" controls>
+<video controls>
     <source src="demo/racechange.mp4" type="video/mp4">
 </video>
 
