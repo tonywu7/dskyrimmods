@@ -15,6 +15,19 @@ body {
     min-height: 100vh;
 }
 
+#header nav {
+    margin: 0;
+}
+
+#header nav li {
+    font-family: 'OpenSansBold', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
+#header nav li a {
+    color: #1d1d1d;
+    font-weight: 700;
+}
+
 code {
     font-family: "Fira Code", "Inconsolata", "Consolas", "Ubuntu Mono", "Courier New", monospace;
 }

@@ -69,7 +69,7 @@ targeting your **Illusion** magic, such as dual casting and Fortify Illusion pot
 
 - For example, with the "Illusion Dual Casting" perk in the skill tree, dual-casting this spell will spawn an object 22
 times per second instead of 10 times.
-- This is compatible with other mods that modify the magic system, such as the Ordinator.
+- This is compatible with other mods that modify the magic system, such as [Ordinator](https://www.nexusmods.com/skyrimspecialedition/mods/1137).
 
 ### Icarus' Curses
 
