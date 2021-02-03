@@ -9,6 +9,13 @@ has used in his Twitch streams:
 - [_Skyrim but 10 cheese wheels spawn in every 10 seconds_](https://www.youtube.com/watch?v=DjSu5UHOj8M)
 - [_Skyrim but everything I hit changes to a random creature_](https://www.youtube.com/watch?v=BhqCvQawo0A)
 
+## Contents
+
+- [Requirements](#requirements)
+- [Download & Install](#download--install)
+- [Usage](#usage)
+- [Known Issues](#known-issues)
+
 ## Requirements
 
 - Skyrim **Special Edition** (this has not been tested on Oldrim).
