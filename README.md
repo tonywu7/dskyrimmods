@@ -1,5 +1,7 @@
 # DougDoug Skyrim Mods
 
+![Poster](demo/social.png)
+
 A reproduction of the various _Elder Scrolls: Skyrim_ mods that [DougDoug](https://www.twitch.tv/dougdougw)
 has used in his Twitch streams:
 
