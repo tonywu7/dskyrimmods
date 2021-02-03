@@ -36,6 +36,8 @@ Event OnEffectStart(Actor akTarget, Actor akCaster)
     if DWPropagatedEffectTerminate.GetValue() == 0.0
         Apply(akTarget, akCaster)
     else
+        ; If the main effect has been dispelled on the player,
+        ; help dispel it from other NPCs
         Cancel(akTarget, akCaster)
     endif
 EndEvent

@@ -68,7 +68,7 @@ _Note that this spell works on dead bodies, but not objects, and does not affect
 in proportion to the victim's weight. This is so that large "objects" such as Giants and Dwarven Centurions will have approximately
 the same initial _acceleration_ as smaller ones such as humans.
 
-**Multipliers:** Additionally, how fast the actor being hit can fly away is affected by the following:
+**Multipliers:** Additionally, how fast the actor being hit will fly away is affected by the following:
 
 - Perks, potions, clothings, and abilities affecting your **Alteration** magic _at the time you cast this spell._
 - How the actor was hit:
@@ -124,14 +124,14 @@ such as [PapyrusUtil](https://www.nexusmods.com/skyrimspecialedition/mods/13048)
 many actors as possible, the _Icarus' Curses_ spell and the _Chaos Conjuration_ spell are designed to self-replicate
 like a virus (which may or may not be how Doug's scripts work).
 
-It is for the most part following the "cloak spell" method described in the
+For the most part it follows the "cloak spell" method described in the
 [Dynamically Attaching Scripts](https://www.creationkit.com/index.php?title=Dynamically_Attaching_Scripts)
 tutorial from the Creation Kit wiki:
 
 1. When your character casts the spell, an invisible cloak is created around your character (using the same mechanism
 as the Fire Cloak spell in the game).
 2. When another actor (NPC/animal/creature) comes into contact with the cloak, two things happen:
-    - A script will run which add the desired effect (on hit fly away/race change) to the actor;
+    - A script will run which adds the desired effect (on hit fly away/race change) to the actor;
     - **The same invisible cloak effect from step 1. is added to the actor as well.**
-3. This process then repeats whenever any actor comes into contace with any "cloaks" as long as they don't already
+3. This process then repeats whenever any actor comes into contact with any "cloaks" as long as they don't already
 have the effect, spreading the effect farther and farther away.

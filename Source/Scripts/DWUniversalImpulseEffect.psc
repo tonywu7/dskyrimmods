@@ -64,8 +64,8 @@ Event OnHit(ObjectReference akAggressor, Form akSource, Projectile akProjectile,
     force = force * DWUniversalImpulseMultiplier.GetValue() / BASE_MAGNITUDE
 
     ; if target != PlayerRef
-    ;     target.UnequipAll()
-    ;     UnequipAccessories(target)
+    ; ;     target.UnequipAll()
+    ; ;     UnequipAccessories(target)
     ; else
     ;     return
     ; endif
@@ -89,6 +89,10 @@ EndEvent
 
 
 Function UnequipAccessories(Actor target)
+    ; Unequip weapons so that they won't stay static after a force was applied
+    ; to the actor.
+    ;
+    ; Not necessary for PushActorAway()
     Weapon w = target.GetEquippedWeapon()
     if w != None
         target.UnequipItem(w, False, True)

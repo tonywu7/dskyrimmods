@@ -27,11 +27,15 @@ GlobalVariable Property DWPropagatedEffectTerminate Auto
 
 
 Event OnEffectStart(Actor akTarget, Actor akCaster)
+    ; Check every 6 in-game hours to see if the effect has been dispelled
+    ; on the player
     akTarget.RegisterForUpdateGameTime(6)
 EndEvent
 
 
 Event OnEffectFinish(Actor akTarget, Actor akCaster)
+    ; If the effect is dispelled on the player through any means
+    ; set the global variable so that effects on NPCs will dispel as well.
     if akTarget == PlayerRef
         DWPropagatedEffectTerminate.SetValue(1.0)
     endif

@@ -29,7 +29,7 @@ float COOLDOWN = 1.0
 
 
 Race Function SelectRandomRace(FormList list)
-    return list.GetAt(Utility.RandomInt(0, list.GetSize())) as Race
+    return list.GetAt(Utility.RandomInt(0, list.GetSize() - 1)) as Race
 EndFunction
 
 

@@ -39,7 +39,7 @@ float HEADING_OFFSET = 0.0
 
 ; How high to spawn the objects, in Skyrim unit
 ; 0 to spawn on the ground (on a flat terrain)
-; For reference, a humanoid in Skyrim is approx. 128 units tall (1.828m, 6ft)
+; For reference, a human in Skyrim is approx. 128 units tall (1.828m, 6ft)
 ; See https://www.creationkit.com/index.php?title=Unit
 float HEIGHT_OFFSET = 100.0
 
@@ -50,7 +50,7 @@ float pulse = 0.0
 
 
 float[] Function ProjectionViewportForward(float distance, float headingOffset = 0.0)
-    ; Return the world space coordinates `distance` unit away in front of the player.
+    ; Return the world space coordinates `distance` unit away ahead of the player.
     ;
     ; Terrains and other bounding boxes are not accounted for.
     float t = PlayerRef.GetAngleZ()

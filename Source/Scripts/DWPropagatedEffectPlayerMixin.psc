@@ -27,6 +27,7 @@ GlobalVariable Property DWPropagatedEffectTerminate Auto
 
 
 Function ResetGlobalSentinel(Actor akTarget)
+    ; Reset the sentinel, but only if this spell was cast by the player.
     if akTarget == PlayerRef
         DWPropagatedEffectTerminate.SetValue(0.0)
     endif
