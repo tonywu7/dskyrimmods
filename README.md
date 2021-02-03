@@ -14,7 +14,8 @@ has used in his Twitch streams:
 
 ## Download & Install
 
-Download it as a .zip file, then install it like you would for any other mods from sites such as Nexus Mods.
+[**Download**](https://github.com/tonywu7/dskyrimmods/releases/download/1.0/DougDougSkyrimMods.zip)
+it as a .zip file, then install it like you would for any other mods from sites such as Nexus Mods.
 **(Use of a mod manager, such as [Vortex](https://www.nexusmods.com/about/vortex/)**
 **or [Mod Organizer 2](https://www.nexusmods.com/skyrimspecialedition/mods/6194),**
 **is highly recommended.)**
@@ -38,7 +39,7 @@ Each will teach you a spell that when used enables the respective effect for 1 h
 
 > If you can't see the demo, visit this repo's [GitHub Pages](https://tonywu7.github.io/dskyrimmods/) instead.
 
-<video width="480" height="300" controls>
+<video height="300" controls>
     <source src="demo/cheese.mp4" type="video/mp4">
 </video>
 
@@ -53,11 +54,11 @@ Note that the "object" that you can spawn can be anything that could be interact
 misc. items such as baskets and cups, ingredients, _critters (e.g. insects and flora), animals and creatures, NPCs, and_
 _usable furnitures such as chairs, doors, and alchemy tables._
 
-<video width="480" height="300" controls>
+<video height="300" controls>
     <source src="demo/cup.mp4" type="video/mp4">
 </video>
 
-<video width="480" height="300" controls>
+<video height="300" controls>
     <source src="demo/nazeem.mp4" type="video/mp4">
 </video>
 
@@ -72,7 +73,7 @@ times per second instead of 10 times.
 
 > For 3600s, any NPCs/animals/creatures hitting another will push the hit target away with a force proportional to the target's weight.
 
-<video width="480" height="300" controls>
+<video height="300" controls>
     <source src="demo/airlines.mp4" type="video/mp4">
 </video>
 
@@ -80,8 +81,6 @@ To use this spell, simply cast it anywhere. The effect will be applied to every 
 (technically not everyone, see [details](#dynamically-applying-magic-effects) below).
 
 The effect will expire in 1 real-life hour. To cancel it early, wait for at least 24 hours in game.
-
-_Note that this spell works on dead bodies, but not objects, and does not affect fall damage._
 
 **Base power:** Instead of applying the same force to every actors being hit, the script will scale the force
 in proportion to the victim's weight. This is so that large "objects" such as Giants and Dwarven Centurions will have approximately
@@ -95,11 +94,16 @@ the same initial _acceleration_ as smaller ones such as humans.
     - A bashing attack using a shield will multiply the applied force by 1.5;
     - If the attack victim successfully blocked the attack, the force will be multiplied by 0.8.
 
+_Note that:_
+
+- This spell works on dead bodies, but not objects, and does not affect fall damage.
+- If you use other mods that modify physics properties, such as the [Realistic Ragdolls and Force](https://www.nexusmods.com/skyrimspecialedition/mods/1439) mod, how far the actors in your game can be pushed away may be different.
+
 ### Chaos Conjuration
 
 > For 3600s, any NPCs/animals/creatures hitting another will change the target into a random race/species.
 
-<video width="480" height="300" controls>
+<video height="300" controls>
     <source src="demo/racechange.mp4" type="video/mp4">
 </video>
 
@@ -172,4 +176,4 @@ This is assuming that Skyrim's physics engine (Havok) follows Newton's second la
 
 ## Acknowledgement
 
-All credit of creativity goes to Doug for coming up with these hilarious ideas. [_Go sub a Dug!_](https://www.twitch.tv/dougdougw)
+All credit of creativity goes to Doug for coming up with these hilarious ideas. [**_Go sub a Dug!_**](https://www.twitch.tv/dougdougw)
