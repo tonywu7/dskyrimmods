@@ -1,11 +1,11 @@
 # DougDoug Skyrim Mods
 
-A reproduction of the various Elder Scrolls: Skyrim mods that [DougDoug](https://www.twitch.tv/dougdougw)
+A reproduction of the various _Elder Scrolls: Skyrim_ mods that [DougDoug](https://www.twitch.tv/dougdougw)
 has used in his Twitch streams:
 
-- [Skryim but every hit sends you flying](https://www.youtube.com/watch?v=g1QRpmNoGpo)
-- [Skyrim but 10 cheese wheels spawn in every 10 seconds](https://www.youtube.com/watch?v=DjSu5UHOj8M)
-- [Skyrim but everything I hit changes to a random creature](https://www.youtube.com/watch?v=BhqCvQawo0A)
+- [_Skryim but every hit sends you flying_](https://www.youtube.com/watch?v=g1QRpmNoGpo)
+- [_Skyrim but 10 cheese wheels spawn in every 10 seconds_](https://www.youtube.com/watch?v=DjSu5UHOj8M)
+- [_Skyrim but everything I hit changes to a random creature_](https://www.youtube.com/watch?v=BhqCvQawo0A)
 
 ## Requirements
 
@@ -15,7 +15,8 @@ has used in his Twitch streams:
 ## Download & Install
 
 Download it as a .zip file, then install it like you would for any other mods from sites such as Nexus Mods.
-**(Use of a mod manager, such as [Mod Organizer 2](https://www.nexusmods.com/skyrimspecialedition/mods/6194),**
+**(Use of a mod manager, such as [Vortex](https://www.nexusmods.com/about/vortex/)**
+**or [Mod Organizer 2](https://www.nexusmods.com/skyrimspecialedition/mods/6194),**
 **is highly recommended.)**
 
 (This mod is currently not published to other sites.)
@@ -35,6 +36,12 @@ Each will teach you a spell that when used enables the respective effect for 1 h
 
 > For 3600s, spawn a selected object at a rate of 10 items per second.
 
+> If you can't see the demo, visit this repo's [GitHub Pages](https://tonywu7.github.io/dskyrimmods/) instead.
+
+<video width="480" height="300" controls>
+    <source src="demo/cheese.mp4" type="video/mp4">
+</video>
+
 To use this spell, find an object you would like to spawn, such as a cheese wheel. Then, cast the spell while targeting
 that object with the crosshair in the center of your screen (when the game prompts for interactions such as "pick up").
 The object you were targeting will begin spawning in front of you.
@@ -46,6 +53,14 @@ Note that the "object" that you can spawn can be anything that could be interact
 misc. items such as baskets and cups, ingredients, _critters (e.g. insects and flora), animals and creatures, NPCs, and_
 _usable furnitures such as chairs, doors, and alchemy tables._
 
+<video width="480" height="300" controls>
+    <source src="demo/cup.mp4" type="video/mp4">
+</video>
+
+<video width="480" height="300" controls>
+    <source src="demo/nazeem.mp4" type="video/mp4">
+</video>
+
 **Multipliers:** The amount of objects spawned each second is affected by perks, potions, clothings, and abilities
 targeting your **Illusion** magic, such as dual casting and Fortify Illusion potions, _at the time you cast this spell:_
 
@@ -56,6 +71,10 @@ times per second instead of 10 times.
 ### Icarus' Curses
 
 > For 3600s, any NPCs/animals/creatures hitting another will push the hit target away with a force proportional to the target's weight.
+
+<video width="480" height="300" controls>
+    <source src="demo/airlines.mp4" type="video/mp4">
+</video>
 
 To use this spell, simply cast it anywhere. The effect will be applied to every NPCs, animals, and creatures in the world
 (technically not everyone, see [details](#dynamically-applying-magic-effects) below).
@@ -79,6 +98,10 @@ the same initial _acceleration_ as smaller ones such as humans.
 ### Chaos Conjuration
 
 > For 3600s, any NPCs/animals/creatures hitting another will change the target into a random race/species.
+
+<video width="480" height="300" controls>
+    <source src="demo/racechange.mp4" type="video/mp4">
+</video>
 
 To use this spell, simply cast it anywhere. The effect will be applied to every NPCs, animals, and creatures in the world.
 
@@ -135,3 +158,18 @@ as the Fire Cloak spell in the game).
     - **The same invisible cloak effect from step 1. is added to the actor as well.**
 3. This process then repeats whenever any actor comes into contact with any "cloaks" as long as they don't already
 have the effect, spreading the effect farther and farther away.
+
+### Applying forces
+
+Pushing an actor away when they are hit is done using the function
+[`ObjectReference.PushActorAway()`](https://www.creationkit.com/index.php?title=PushActorAway_-_ObjectReference)
+when they are alive, and [`ObjectReference.ApplyHavokImpulse()`](https://www.creationkit.com/index.php?title=ApplyHavokImpulse_-_ObjectReference)
+when they are dead.
+
+The force applied is simply a base value multiplied by the actor's weight, accessed through
+[`ObjectReference.GetMass()`](https://www.creationkit.com/index.php?title=GetMass_-_ObjectReference).
+This is assuming that Skyrim's physics engine (Havok) follows Newton's second law of motion `F = ma`.
+
+## Acknowledgement
+
+All credit of creativity goes to Doug for coming up with these hilarious ideas. [_Go sub a Dug!_](https://www.twitch.tv/dougdougw)
