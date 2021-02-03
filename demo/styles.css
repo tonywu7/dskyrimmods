@@ -16,16 +16,15 @@ body {
 }
 
 #header nav {
-    margin: 0;
+    margin: 0 auto;
 }
 
 #header nav li {
-    font-family: 'OpenSansBold', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+    font-family: 'OpenSans', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }
 
 #header nav li a {
-    color: #1d1d1d;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 code {
