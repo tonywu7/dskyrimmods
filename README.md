@@ -172,6 +172,12 @@ as the Fire Cloak spell in the game).
 3. This process then repeats whenever any actor comes into contact with any "cloaks" as long as they don't already
 have the effect, spreading the effect farther and farther away.
 
+To demonstrate using the Frenzy spell (not in this mod):
+
+<video controls>
+    <source src="demo/chain.mp4" type="video/mp4">
+</video>
+
 ### Applying forces
 
 Pushing an actor away when they are hit is done using the function
