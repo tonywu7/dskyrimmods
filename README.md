@@ -29,6 +29,12 @@ it as a .zip file, then install it like you would for any other mods from sites 
 **or [Mod Organizer 2](https://www.nexusmods.com/skyrimspecialedition/mods/6194),**
 **is highly recommended.)**
 
+Note: If this is the first time you are using SKSE, be sure to install it correctly, and
+be sure to launch your game using SKSE's executable instead of the original one.
+
+A concise tutorial on how to download, install, and start the game using SKSE can be found
+[here](http://wiki.tesnexus.com/index.php/SKSE:_Skyrim_Script_Extension).
+
 (This mod is currently not published to other sites.)
 
 ## Usage
