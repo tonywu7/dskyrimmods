@@ -23,7 +23,7 @@ has used in his Twitch streams:
 
 ## Download & Install
 
-[**Download**](https://github.com/tonywu7/dskyrimmods/releases/download/1.0/DougDougSkyrimMods.zip)
+[**Download**](https://github.com/tonyzbf/dskyrimmods/releases/download/1.0.1/DougDougSkyrimMods.zip)
 it as a .zip file, then install it like you would for any other mods from sites such as Nexus Mods.
 **(Use of a mod manager, such as [Vortex](https://www.nexusmods.com/about/vortex/)**
 **or [Mod Organizer 2](https://www.nexusmods.com/skyrimspecialedition/mods/6194),**
