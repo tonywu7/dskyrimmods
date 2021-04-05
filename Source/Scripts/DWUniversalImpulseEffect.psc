@@ -1,6 +1,6 @@
 ; MIT License
 ;
-; Copyright (c) 2021 @flugzbf
+; Copyright (c) 2021 @tonyzbf
 ; Credit of originality: @DougDougFood
 ;
 ; Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -25,7 +25,7 @@ Scriptname DWUniversalImpulseEffect extends DWPropagatedEffectCleanUpMixin
 
 import DWVectorUtil
 
-float BASE_FORCE = 3.0
+float BASE_FORCE = 30.0
 float BASE_MAGNITUDE = 192.0
 float COOLDOWN = 1.0
 
@@ -76,10 +76,10 @@ Event OnHit(ObjectReference akAggressor, Form akSource, Projectile akProjectile,
     ; Utility.Wait(0.05)
 
     if target.IsDead()
-        force = WeightedForce(target, force, 2.0)
+        force = WeightedForce(target, force, 0.2)
         target.ApplyHavokImpulse(direction[0], direction[1], direction[2], force)
     else
-        force = WeightedForce(target, force, 0.1)
+        ; force = WeightedForce(target, force, 0.1)
         akAggressor.PushActorAway(target, force)
     endif
 

@@ -1,6 +1,6 @@
 ; MIT License
 ;
-; Copyright (c) 2021 @flugzbf
+; Copyright (c) 2021 @tonyzbf
 ; Credit of originality: @DougDougFood
 ;
 ; Permission is hereby granted, free of charge, to any person obtaining a copy

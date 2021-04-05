@@ -103,6 +103,7 @@ the same initial _acceleration_ as smaller ones such as humans.
 
 **Multipliers:** Additionally, how fast the actor being hit will fly away is affected by the following:
 
+- **Modifier spells (named like "Icarus' Modifier 2x/5x/10x")** (New in version 1.1).
 - Perks, potions, clothings, and abilities affecting your **Alteration** magic _at the time you cast this spell._
 - How the actor was hit:
     - A power attack using a weapon will multiply the applied force by 2;
